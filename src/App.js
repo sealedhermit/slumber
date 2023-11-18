@@ -78,7 +78,7 @@ function App() {
     <div className="App">
       <div className="page-container" ref={pageRef}>
         <div className="page home" style={{ transform: `translateX(-${currentPage * 100}vw)` }} id="home">
-          <h1>Home Page</h1>
+          <h1>Home</h1>
           <div className="sound-tiles">
             <div className={`tile ${activeSounds.includes('Fan') ? 'active' : ''}`} onClick={() => playOrStopSound('Fan')}>Fan</div>
             <div className={`tile ${activeSounds.includes('Cat') ? 'active' : ''}`} onClick={() => playOrStopSound('Cat')}>Cat</div>
@@ -89,7 +89,7 @@ function App() {
         </div>
 
         <div className="page forest" style={{ transform: `translateX(-${currentPage * 100}vw)` }} id="forest">
-           <h1>Forest Page</h1>
+           <h1>Forest</h1>
           <div className="sound-tiles">
             <div className={`tile ${activeSounds.includes('Rain') ? 'active' : ''}`} onClick={() => playOrStopSound('Rain')}>Rain</div>  
             <div className={`tile ${activeSounds.includes('Thunder') ? 'active' : ''}`} onClick={() => playOrStopSound('Thunder')}>Thunder</div>
@@ -101,7 +101,7 @@ function App() {
 
         <div className="page beach" style={{ transform: `translateX(-${currentPage * 100}vw)` }} id="beach">
           
-          <h1>Beach Page</h1>
+          <h1>Beach</h1>
           <div className="sound-tiles">
             <div className={`tile ${activeSounds.includes('Waves') ? 'active' : ''}`} onClick={() => playOrStopSound('Waves')}>Waves</div>  
             <div className={`tile ${activeSounds.includes('Seagulls') ? 'active' : ''}`} onClick={() => playOrStopSound('Seagulls')}>Seagulls</div>
@@ -113,7 +113,7 @@ function App() {
 
         <div className="page urban" style={{ transform: `translateX(-${currentPage * 100}vw)` }} id="urban">
           
-          <h1>Urban Page</h1>
+          <h1>Urban</h1>
           <div className="sound-tiles">
             <div className={`tile ${activeSounds.includes('People') ? 'active' : ''}`} onClick={() => playOrStopSound('People')}>People</div>
             <div className={`tile ${activeSounds.includes('Traffic') ? 'active' : ''}`} onClick={() => playOrStopSound('Traffic')}>Traffic</div>

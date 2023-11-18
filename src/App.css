@@ -22,6 +22,13 @@
   transition: transform 0.3s ease-in-out; /* Add transition property for smoother sliding */
 }
 
+.page h1 {
+  color: #b7bdce; /* Change to your desired color */
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+  font-weight: bold;
+  /* Other existing styles */
+}
+
 .home {
   background-color: lightblue;
 }
@@ -105,7 +112,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  margin: 0 5px; /* Adjust margin between buttons */
+  margin: 0 4.5px; /* Adjust margin between buttons */
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -144,3 +151,53 @@
   box-sizing: border-box;
 }
 
+.home {
+  background-image: url('/public/home.jpg');
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  /* Other styles */
+}
+
+.forest {
+  background-image: url('/public/forest.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Other styles */
+}
+
+.beach {
+  background-image: url('/public/beach.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Other styles */
+}
+
+.urban {
+  background-image: url('/public/urban.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Other styles */
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif; /* Choose a suitable font */
+  font-size: 14px; /* Adjust font size */
+  color: #333; /* Choose a darker color for better visibility */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Apply transition for hover effects */
+}
+
+.tile:hover {
+  transform: scale(1.05); /* Scale up the tile on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
