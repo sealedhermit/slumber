@@ -85,29 +85,24 @@
 
 .
 
+.nav-links.bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px 0; /* Added padding for space around buttons */
+}
+
 .nav-links.bottom button {
-  background-color: rgba(0, 0, 0, 0.3); /* Transparent black background */
-  color: rgba(255, 255, 255, 0.8); /* Semi-transparent white text */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-  font-size: 16px;
   cursor: pointer;
+  background-color: #ddd;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  flex-basis: 20%; /* Adjust the flex-basis to set the button width */
+  margin: 0; /* Remove the margin */
 }
 
 .nav-links.bottom button:hover {
-  background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover */
+  background-color: #bbb;
 }
-
-.nav-links.bottom {
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center buttons horizontally */
-  align-items: center; /* Center buttons vertically */
-  /* Add additional styles for layout */
-}
-
-.nav-links.bottom button {
-  /* Your button styles */
-}
-
