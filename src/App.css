@@ -7,15 +7,16 @@
   -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
 }
 
-
 .page-container {
   flex: 1;
-  overflow-x: hidden;
-  overflow-y: hidden; /* Add this line to disable vertical scrolling */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable mandatory horizontal scroll snapping */
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden; /* Disable vertical scrolling */
   white-space: nowrap;
   padding-bottom: 50px;
   background: transparent;
-  scroll-snap-align: center;
+  scroll-snap-align: center; /* Ensure centered snapping */
 }
 
 .page {
@@ -25,10 +26,7 @@
   text-align: center;
   padding-top: 40px;
   margin-bottom: 0; /* Remove the margin-bottom */
-  box-sizing: border-box;
-  transition: transform 0.3s ease-in-out;
-  background-size: cover; /* Set background-size to cover */
-  background-position: center; /* Set background-position to center */
+  box-sizing: border-box
 }
 
 
