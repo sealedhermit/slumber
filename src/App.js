@@ -38,11 +38,11 @@ function App() {
     if (pageRef.current && page) {
       pageRef.current.scrollTo({
         left: page.offsetLeft,
-        behavior: 'smooth',
+        behavior: 'auto', // Change behavior to 'auto'
       });
     }
   };
-
+  
   const stopAllSounds = () => {
     Object.keys(audioRefs.current).forEach((sound) => {
       audioRefs.current[sound].pause();

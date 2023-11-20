@@ -108,10 +108,10 @@
 
 .page-container {
   flex: 1;
-  overflow-x: auto;
+  overflow-x: hidden; /* Disable horizontal overflow */
   white-space: nowrap;
   padding-bottom: 50px;
-  background: transparent;
+  scroll-behavior: smooth; /* Add smooth scrolling */
 }
 
 .nav-links {
