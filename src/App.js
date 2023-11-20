@@ -31,6 +31,22 @@ function App() {
   const audioRefs = useRef({});
   const pageRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isVolumeSliderActive, setIsVolumeSliderActive] = useState(false);
+
+  const togglePageScrolling = (enableScrolling) => {
+    const body = document.getElementsByTagName('body')[0];
+    body.style.overflow = enableScrolling ? 'auto' : 'hidden';
+  };
+
+  const handleVolumeSliderInteraction = (event) => {
+    if (event.type === 'mousedown') {
+      setIsVolumeSliderActive(true);
+      togglePageScrolling(false);
+    } else if (event.type === 'mouseup') {
+      setIsVolumeSliderActive(false);
+      togglePageScrolling(true);
+    }
+  };
 
   const scrollToPage = (pageId, pageIndex) => {
     setCurrentPage(pageIndex); // Set the current page index
@@ -42,13 +58,14 @@ function App() {
       });
     }
   };
-  
+
   const stopAllSounds = () => {
     Object.keys(audioRefs.current).forEach((sound) => {
       audioRefs.current[sound].pause();
       audioRefs.current[sound].currentTime = 0;
     });
   };
+  
 
   const playOrStopSound = (sound) => {
     const audioPath = `${process.env.PUBLIC_URL}/sounds/${sound}.mp3`;
@@ -103,6 +120,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Fan'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Fan')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -115,6 +134,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Cat'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Cat')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -127,6 +148,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Clock'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Clock')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -139,6 +162,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Television'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Television')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -151,6 +176,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['AC'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'AC')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
           </div>
@@ -169,6 +196,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Rain'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Rain')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -181,6 +210,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Thunder'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Thunder')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -193,6 +224,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Birds'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Birds')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -205,6 +238,9 @@ function App() {
                 step="0.1"
                 value={volumeLevels['River'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'River')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
+                
               />
             </div>
             <div className="sound-tile">
@@ -217,6 +253,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Wind'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Wind')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
           </div>
@@ -236,6 +274,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Waves'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Waves')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>  
             <div className="sound-tile">
@@ -248,6 +288,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Seagulls'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Seagulls')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -260,6 +302,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Boat'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Boat')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -272,6 +316,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Campfire'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Campfire')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -284,6 +330,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Melody'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Melody')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
           </div>
@@ -303,6 +351,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['People'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'People')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -315,6 +365,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Traffic'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Traffic')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -327,6 +379,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Pigeons'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Pigeons')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -339,6 +393,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Truck'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Truck')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
             <div className="sound-tile">
@@ -351,6 +407,8 @@ function App() {
                 step="0.1"
                 value={volumeLevels['Train'] || 1.0}
                 onChange={(event) => handleVolumeChange(event, 'Train')}
+                onMouseDown={handleVolumeSliderInteraction}
+                onMouseUp={handleVolumeSliderInteraction}
               />
             </div>
           </div>
