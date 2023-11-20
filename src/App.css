@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable mandatory horizontal scroll snapping */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
 }
+
 
 .page-container {
   flex: 1;
@@ -11,6 +15,7 @@
   white-space: nowrap;
   padding-bottom: 50px;
   background: transparent;
+  scroll-snap-align: center;
 }
 
 .page {
@@ -110,13 +115,7 @@
 
 
 
-.page-container {
-  flex: 1;
-  overflow-x: hidden; /* Disable horizontal overflow */
-  white-space: nowrap;
-  padding-bottom: 50px;
-  scroll-behavior: smooth; /* Add smooth scrolling */
-}
+
 
 .nav-links {
   display: flex;
@@ -228,7 +227,4 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.volume-slider {
-  width: 100%; /* Adjust volume slider width */
-  margin-top: 10px; /* Adjust margin between sound tile and volume slider */
-}
+
