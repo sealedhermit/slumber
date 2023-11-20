@@ -6,9 +6,11 @@
 
 .page-container {
   flex: 1;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Add this line to disable vertical scrolling */
   white-space: nowrap;
   padding-bottom: 50px;
+  background: transparent;
 }
 
 .page {
