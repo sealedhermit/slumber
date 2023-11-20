@@ -2,33 +2,34 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: scroll; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Enable mandatory horizontal scroll snapping */
   -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
 }
 
 .page-container {
-  flex: 1;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  display: flex; /* Use flex to contain pages */
+  flex-direction: row; /* Align pages horizontally */
   scroll-snap-type: x mandatory; /* Enable mandatory horizontal scroll snapping */
-  -webkit-overflow-scrolling: touch;
-  overflow-y: hidden; /* Disable vertical scrolling */
-  white-space: nowrap;
-  padding-bottom: 50px;
-  background: transparent;
-  scroll-snap-align: center; /* Ensure centered snapping */
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling for iOS */
+  height: 100vh; /* Full viewport height for the container */
 }
 
 .page {
-  display: inline-block;
-  width: 100vw;
-  height: 100vh;
+  flex: 0 0 auto; /* Ensure each page doesn't shrink or grow */
+  width: 100vw; /* Full viewport width for each page */
+  min-width: 100vw; /* Minimum width for each page */
+  height: 100vh; /* Full viewport height for each page */
+  scroll-snap-align: start; /* Align pages to the start of the container */
   text-align: center;
   padding-top: 40px;
   margin-bottom: 0; /* Remove the margin-bottom */
-  box-sizing: border-box
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  background-size: cover; /* Set background-size to cover */
+  background-position: center; /* Set background-position to center */
 }
-
 
 .page h1 {
   color: #b7bdce; /* Change to your desired color */
