@@ -14,12 +14,14 @@
 .page {
   display: inline-block;
   width: 100vw;
-  height: calc(100vh - 150px); /* Adjusted height to create space for buttons */
+  height: 100vh;
   text-align: center;
-  padding-top: 50px; /* Decreased padding for the title positioning */
-  margin-bottom: 50px;
+  padding-top: 40px;
+  margin-bottom: 0; /* Remove the margin-bottom */
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out;
+  background-size: cover; /* Set background-size to cover */
+  background-position: center; /* Set background-position to center */
 }
 
 
