@@ -14,13 +14,14 @@
 .page {
   display: inline-block;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 150px); /* Adjusted height to create space for buttons */
   text-align: center;
-  padding-top: 80px; /* Increased padding for more space above sound tiles */
-  margin-bottom: 50px; /* Added margin at the bottom of each page */
+  padding-top: 50px; /* Decreased padding for the title positioning */
+  margin-bottom: 50px;
   box-sizing: border-box;
-  transition: transform 0.3s ease-in-out; /* Add transition property for smoother sliding */
+  transition: transform 0.3s ease-in-out;
 }
+
 
 .page h1 {
   color: #b7bdce; /* Change to your desired color */
@@ -29,27 +30,8 @@
   /* Other existing styles */
 }
 
-.home {
-  background-color: lightblue;
-}
 
-.forest {
-  background-color: lightgreen;
-}
 
-.beach {
-  background-color: lightcoral;
-}
-
-.urban {
-  background-color: lightsalmon;
-}
-
-.sound-tiles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
 .tile {
   width: 100px;
@@ -122,14 +104,7 @@
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(to bottom, lightblue, lightgreen, lightcoral, lightsalmon); /* Your desired background gradient or image */
-  margin: 0;
-  padding: 0;
-}
+
 
 .page-container {
   flex: 1;
@@ -153,8 +128,9 @@
 
 .home {
   background-image: url('/public/home.jpg');
-  background-size: cover; /* Ensure the background image covers the entire container */
-  background-position: center; /* Center the background image */
+  background-size: cover;
+  background-position: center;
+  background-color: transparent; /* Remove the solid color fill */
   /* Other styles */
 }
 
@@ -162,6 +138,7 @@
   background-image: url('/public/forest.jpg');
   background-size: cover;
   background-position: center;
+  background-color: transparent; /* Remove the solid color fill */
   /* Other styles */
 }
 
@@ -169,6 +146,7 @@
   background-image: url('/public/beach.jpg');
   background-size: cover;
   background-position: center;
+  background-color: transparent; /* Remove the solid color fill */
   /* Other styles */
 }
 
@@ -176,6 +154,7 @@
   background-image: url('/public/urban.jpg');
   background-size: cover;
   background-position: center;
+  background-color: transparent; /* Remove the solid color fill */
   /* Other styles */
 }
 
@@ -205,4 +184,47 @@
 body {
   overflow-x: hidden; /* Disable horizontal scrolling */
   overscroll-behavior-x: none; /* Disable overscroll behavior */
+}
+
+.sound-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px; /* Added margin at the top of sound tiles */
+}
+
+.sound-tile {
+  width: 150px; /* Adjust tile width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px; /* Adjust margin between sound tiles */
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* Adjust margin at the bottom of tiles */
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.volume-slider {
+  width: 100%; /* Adjust volume slider width */
+  margin-top: 10px; /* Adjust margin between sound tile and volume slider */
 }
