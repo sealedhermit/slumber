@@ -226,4 +226,17 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.sound-tile input[type="range"].volume-slider {
+  /* Existing styles */
+  touch-action: manipulation; /* Ensure proper touch interaction */
+}
 
+.sound-tile input[type="range"].volume-slider::-webkit-slider-thumb {
+  /* Existing styles */
+  touch-action: manipulation; /* Ensure proper touch interaction */
+}
+
+/* Add this new rule to prevent event propagation */
+.sound-tile input[type="range"].volume-slider {
+  pointer-events: auto;
+}
